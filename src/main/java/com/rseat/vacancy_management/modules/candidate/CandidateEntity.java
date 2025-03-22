@@ -25,7 +25,7 @@ public class CandidateEntity {
     @Email(message = "Field [email] should be valid!")
     private String email;
 
-    @Pattern(regexp = "\\S+", message = "The field [name] should not be contain spaces")
+    @Pattern(regexp = "\\S+", message = "The field [username] should not be contain spaces")
     private String username;
 
     @Length(min = 10, max = 100, message = "Password should be contain 10 - 100 characters")
