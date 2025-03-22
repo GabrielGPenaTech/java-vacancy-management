@@ -11,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity(name = "company")
 @Data
@@ -18,7 +19,7 @@ public class CompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     @Email(message = "Field [email] should be valid!")
     private String email;
