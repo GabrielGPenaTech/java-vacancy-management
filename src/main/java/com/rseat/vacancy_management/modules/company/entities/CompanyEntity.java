@@ -1,4 +1,4 @@
-package com.rseat.vacancy_management.modules.candidate;
+package com.rseat.vacancy_management.modules.company.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,16 +11,14 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
+@Entity(name = "company")
 @Data
-@Entity(name = "candidate")
-public class CandidateEntity {
+public class CompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID  id;
-    private String name;
+    private String id;
 
     @Email(message = "Field [email] should be valid!")
     private String email;
@@ -30,10 +28,10 @@ public class CandidateEntity {
 
     @Length(min = 10, max = 100, message = "Password should be contain 10 - 100 characters")
     private String password;
+    private String website;
+    private String name;
     private String description;
-    private String curriculum;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
 }
